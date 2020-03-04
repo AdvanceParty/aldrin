@@ -28,7 +28,7 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'image',
+      name: 'baseImage',
       title: 'Image',
       description:
         'The front of the building or a cool interior shot would be nice.',

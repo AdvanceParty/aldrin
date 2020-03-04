@@ -14,7 +14,7 @@ export default {
       title: 'Author',
       type: 'reference',
       to: {
-        type: 'royal'
+        type: 'royalsPerson'
       }
     },
     {
@@ -49,9 +49,9 @@ export default {
       type: 'hero'
     },
     {
-      name: 'body',
+      name: 'bodyText',
       title: 'Story',
-      type: 'body'
+      type: 'richTextMedia'
     },
     {
       name: 'pods',

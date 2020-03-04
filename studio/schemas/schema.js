@@ -11,15 +11,17 @@ import vine from './vine';
 import callout from './pods/callout';
 import figure from './pods/figure';
 import imageGallery from './pods/imageGallery';
-import royal from './pods/royalsPerson';
+import royalsPerson from './pods/royalsPerson';
 import hero from './pods/hero';
 
 // objects
 import address from './objects/address';
+import baseImage from './objects/baseImage';
 import phoneNumber from './objects/phoneNumber';
 import richParagraph from './objects/richParagraph';
 import richText from './objects/richText';
 import richTextMedia from './objects/richTextMedia';
+import royalsPlace from './pods/royalsPlace';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,16 +33,18 @@ export default createSchema({
     // containers
     vine,
     // objects,
-    richTextMedia,
-    hero,
     address,
+    baseImage,
     phoneNumber,
     richParagraph,
     richText,
+    richTextMedia,
     // pods
     callout,
     figure,
+    hero,
     imageGallery,
-    royal
+    royalsPerson,
+    royalsPlace
   ])
 });

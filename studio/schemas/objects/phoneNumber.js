@@ -5,6 +5,16 @@ export default {
   name: 'phoneNumber',
   title: 'Phone Number',
   type: 'object',
+  preview: {
+    select: {
+      regionCode: 'regionCode',
+      number: 'number'
+    },
+    prepare(selection) {
+      const { regionCode, number } = selection;
+      title: `${regionCode} ${number}`;
+    }
+  },
   fields: [
     {
       name: 'regionCode',

@@ -2,7 +2,20 @@ export default {
   name: 'hero',
   title: 'Hero',
   type: 'document',
-  hidden: true,
+  preview: {
+    select: {
+      title: 'title',
+      description: 'description',
+      alt: 'image.alt',
+      cta: 'cta.title'
+    },
+    prepare(selection) {
+      const { title, alt, cta } = selection;
+      return {
+        title: title || alt || cta || 'Untitled Hero Pod'
+      };
+    }
+  },
   fields: [
     {
       name: 'title',
@@ -18,6 +31,11 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'image'
+    },
+    {
+      name: 'cta',
+      title: 'Call To Action',
+      type: 'cta'
     }
   ]
 };

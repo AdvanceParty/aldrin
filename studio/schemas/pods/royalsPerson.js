@@ -2,11 +2,36 @@ export default {
   name: 'royalsPerson',
   title: 'Royals Person',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      job: 'job',
+      office: 'office'
+    },
+    prepare(selection) {
+      const { title, job, office } = selection;
+      return {
+        title: title || 'Captain Mysterious',
+        subtitle: `${job || ''}${job && office ? ', ' : ''}${office || ''}`
+      };
+    }
+  },
   fields: [
     {
       name: 'title',
       title: 'Full Name',
       type: 'string',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      description:
+        'A unique identifier for this record, used for URL generation and SEO. Usually, you can just click the Generate button and all will be fine.',
+      options: {
+        source: doc => `royal-${doc.title}`
+      },
       validation: Rule => Rule.required()
     },
     {
@@ -46,15 +71,13 @@ export default {
       name: 'profileImage',
       title: 'Profile Photo',
       description: 'A photo of the person',
-      validation: Rule => Rule.required(),
-      type: 'baseImage'
+      type: 'image'
     },
     {
       name: 'personalImage',
       title: 'Personal Pic',
       description: 'An image of something important to person',
-      validation: Rule => Rule.required(),
-      type: 'baseImage'
+      type: 'image'
     }
   ]
 };

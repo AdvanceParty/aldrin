@@ -2,6 +2,20 @@ export default {
   name: 'imageGallery',
   title: 'Image Gallery',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      items: 'items'
+    },
+    prepare(selection) {
+      const { title, items } = selection;
+      const plural = items.length > 1 ? 's' : '';
+      return {
+        title: title || 'Untitled Gallery',
+        subtitle: `${items.length} item${plural}`
+      };
+    }
+  },
   fields: [
     {
       name: 'title',

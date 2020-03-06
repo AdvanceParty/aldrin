@@ -6,9 +6,15 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Image Details',
+      title: 'Image',
       name: 'baseImage',
       type: 'baseImage'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'baseImage.title',
+      subtitle: 'baseImage.alt'
+    }
+  }
 };

@@ -1,7 +1,13 @@
 export default {
-  name: 'Vine',
-  title: 'vine',
+  name: 'vine',
+  title: 'Vine',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'category'
+    }
+  },
   fields: [
     {
       name: 'title',
@@ -30,13 +36,15 @@ export default {
       }
     },
     {
-      name: 'slug',
       title: 'Slug',
+      name: 'slug',
       type: 'slug',
+      description:
+        'A unique identifier for this record, used for URL generation and SEO. Usually, you can just click the Generate button and all will be fine.',
       options: {
-        source: 'title',
-        isUnique: true
-      }
+        source: doc => `${doc.category}-${doc.title}`
+      },
+      validation: Rule => Rule.required()
     },
     {
       name: 'description',

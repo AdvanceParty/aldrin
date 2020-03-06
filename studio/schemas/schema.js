@@ -17,6 +17,7 @@ import hero from './pods/hero';
 // objects
 import address from './objects/address';
 import baseImage from './objects/baseImage';
+import cta from './objects/cta';
 import phoneNumber from './objects/phoneNumber';
 import richParagraph from './objects/richParagraph';
 import richText from './objects/richText';
@@ -35,6 +36,7 @@ export default createSchema({
     // objects,
     address,
     baseImage,
+    cta,
     phoneNumber,
     richParagraph,
     richText,

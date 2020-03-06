@@ -2,6 +2,11 @@ export default {
   name: 'callout',
   title: 'Callout',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title'
+    }
+  },
   fields: [
     {
       name: 'title',

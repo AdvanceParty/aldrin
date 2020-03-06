@@ -1,14 +1,18 @@
 export default {
   name: 'baseImage',
-  title: 'Base Image',
-  description: 'Data structure common to all images',
+  title: 'Image',
+  description: 'An image asset with optional title, alt text and caption data.',
   type: 'object',
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'alt'
+    }
+  },
   fields: [
     {
       name: 'title',
       title: 'Title',
-      description:
-        'Helps search and manage image assets in our CMS. May also be used by some UI elements on the website, such as search result listings, gallery titles, etc.',
       type: 'string'
     },
     {
@@ -17,17 +21,17 @@ export default {
       type: 'string'
     },
     {
+      name: 'image',
+      title: 'Image File',
+      type: 'image'
+    },
+    {
       name: 'description',
       title: 'Caption',
       type: 'text',
       options: {
         isHighlighted: true
       }
-    },
-    {
-      name: 'image',
-      title: 'Image Information',
-      type: 'image'
     }
   ]
 };

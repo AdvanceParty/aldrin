@@ -12,6 +12,21 @@ export default {
   name: 'address',
   title: 'Address',
   type: 'object',
+  preview: {
+    select: {
+      title: 'street',
+      australianState: 'australianState',
+      internationalState: 'internationalState',
+      region: 'region'
+    },
+    prepare(selection) {
+      const { title, region, australianState, internationalState } = selection;
+      return {
+        title: title || 'Nowheresville',
+        subtitle: `${region} ${australianState || internationalState}`
+      };
+    }
+  },
   fields: [
     {
       name: 'address1',

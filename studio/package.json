@@ -8,8 +8,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
-    "test": "sanity check",
-    "deploySchema": "sanity graphql deploy --no-playground | egrep \"https.+\" | xargs -I {} npx @2fd/graphdoc --force -e {} -o ../doc/schema; echo \"Schema deployed and generated docs saved to ../doc/schema/\""
+    "test": "sanity check"
   },
   "keywords": [
     "sanity"

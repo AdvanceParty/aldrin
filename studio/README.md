@@ -1,9 +1,5 @@
-# Sanity Clean Content Studio
+# Doc your Schema!
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+The graph module does a nice job of generating interactive html docs fro your GraphQL endpoint. Use npx and boom!
 
-Now you can do the following things:
-
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+`npx @2fd/graphdoc --force -e SANITY_GRAPHQL_ENDPOINT -o ./PATH/TO/SAVE/DOCS`

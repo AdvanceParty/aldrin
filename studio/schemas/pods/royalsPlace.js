@@ -28,33 +28,28 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'description',
-      title: 'text',
-      type: 'string'
-    },
-    {
       name: 'address',
       title: 'Address',
       type: 'address',
       validation: Rule => Rule.required()
     },
     {
-      name: 'phone1',
+      name: 'phone',
       title: 'Primary Phone Number',
       type: 'phoneNumber',
       validation: Rule => Rule.required()
     },
     {
-      name: 'baseImage',
+      name: 'email',
+      title: 'Email Address',
+      type: 'string'
+    },
+    {
+      name: 'image',
       title: 'Image',
       description:
         'The front of the building or a cool interior shot would be nice.',
-      type: 'baseImage'
-    },
-    {
-      name: 'phone2',
-      title: 'Secondary/Alternate Phone Number',
-      type: 'phoneNumber'
+      type: 'image'
     },
     {
       name: 'geolocation',

@@ -9,20 +9,22 @@ import vine from './vine';
 
 // pods
 import callout from './pods/callout';
-import figure from './pods/figure';
-import imageGallery from './pods/imageGallery';
-import royalsPerson from './pods/royalsPerson';
 import hero from './pods/hero';
+import imageCollection from './pods/imageCollection';
+import royalsPerson from './pods/royalsPerson';
+import royalsPeople from './pods/royalsPeople';
+import royalsPlace from './pods/royalsPlace';
+import simpleImage from './pods/simpleImage';
 
 // objects
+import simpleImageObject from './objects/simpleImageObject';
+//
 import address from './objects/address';
-import baseImage from './objects/baseImage';
 import cta from './objects/cta';
 import phoneNumber from './objects/phoneNumber';
 import richParagraph from './objects/richParagraph';
 import richText from './objects/richText';
 import richTextMedia from './objects/richTextMedia';
-import royalsPlace from './pods/royalsPlace';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,22 +33,22 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    // containers
+    //
+    simpleImageObject,
+    //
     vine,
-    // objects,
+    callout,
+    hero,
+    imageCollection,
+    royalsPerson,
+    royalsPeople,
+    royalsPlace,
+    simpleImage,
     address,
-    baseImage,
     cta,
     phoneNumber,
     richParagraph,
     richText,
-    richTextMedia,
-    // pods
-    callout,
-    figure,
-    hero,
-    imageGallery,
-    royalsPerson,
-    royalsPlace
+    richTextMedia
   ])
 });

@@ -27,12 +27,15 @@ export default {
       name: 'category',
       title: 'Category',
       type: 'string',
+      validation: Rule => Rule.required(),
       options: {
         list: [
           { title: 'Page', value: 'page' },
           { title: 'Article', value: 'article' },
-          { title: 'Work', value: 'work' }
-        ]
+          { title: 'Work', value: 'work' },
+          { title: 'Other', value: '' }
+        ],
+        layout: 'radio'
       }
     },
     {
@@ -66,12 +69,18 @@ export default {
       title: 'Pods',
       type: 'array',
       of: [
-        //
-        { type: 'callout' },
-        { type: 'figure' },
-        { type: 'hero' },
-        { type: 'imageGallery' },
-        { type: 'royalsPerson' }
+        {
+          type: 'reference',
+          to: [
+            { type: 'callout' },
+            { type: 'hero' },
+            { type: 'imageCollection' },
+            { type: 'royalsPerson' },
+            { type: 'royalsPeople' },
+            { type: 'royalsPlace' },
+            { type: 'simpleImage' }
+          ]
+        }
       ]
     }
   ]

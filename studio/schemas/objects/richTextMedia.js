@@ -26,9 +26,13 @@ export default {
             ]
           }
         },
-        { type: 'baseImage' },
-        { type: 'callout' },
-        { type: 'hero' }
+        // { type: 'simpleImage' },
+        // { type: 'callout' },
+        // { type: 'hero' },
+        {
+          type: 'reference',
+          to: [{ type: 'simpleImage' }, { type: 'callout' }, { type: 'hero' }]
+        }
       ]
     }
   ]

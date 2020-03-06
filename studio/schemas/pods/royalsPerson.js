@@ -6,13 +6,15 @@ export default {
     select: {
       title: 'title',
       job: 'job',
-      office: 'office'
+      office: 'office.title',
+      image: 'profileImage'
     },
     prepare(selection) {
-      const { title, job, office } = selection;
+      const { title, job, office, image } = selection;
       return {
         title: title || 'Captain Mysterious',
-        subtitle: `${job || ''}${job && office ? ', ' : ''}${office || ''}`
+        subtitle: `${job || ''}${job && office ? ', ' : ''}${office || ''}`,
+        media: image
       };
     }
   },

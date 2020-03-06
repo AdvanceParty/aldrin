@@ -1,0 +1,28 @@
+export default {
+  name: 'simpleImage',
+  title: 'Image Pod',
+  type: 'document',
+  preview: {
+    select: {
+      title: 'image.title',
+      alt: 'image.alt',
+      image: 'image.image'
+    },
+    prepare(selection) {
+      const { title, alt, image } = selection;
+      return {
+        title: title || 'Untitled Masterpiece',
+        subtitle: alt || '',
+        media: image
+      };
+    }
+  },
+  fields: [
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'simpleImageObject',
+      validation: Rule => Rule.required()
+    }
+  ]
+};

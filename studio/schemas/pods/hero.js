@@ -6,13 +6,14 @@ export default {
     select: {
       title: 'title',
       description: 'description',
-      alt: 'image.alt',
+      image: 'image',
       cta: 'cta.title'
     },
     prepare(selection) {
-      const { title, alt, cta } = selection;
+      const { title, cta, image } = selection;
       return {
-        title: title || alt || cta || 'Untitled Hero Pod'
+        title: title || alt || cta || 'Untitled Hero Pod',
+        media: image || null
       };
     }
   },

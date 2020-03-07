@@ -7,14 +7,16 @@ export default {
   preview: {
     select: {
       title: 'title',
-      itemCount: 'items.length'
+      itemCount: 'items.length',
+      image: 'items.0.profileImage'
     },
     prepare(selection) {
-      const { title, itemCount } = selection;
+      const { title, itemCount, image } = selection;
       const plural = itemCount == 1 ? '(lonely) person' : 'people';
       return {
         title: title || 'Untitled bunch of randos',
-        subtitle: `${itemCount} ${plural}`
+        subtitle: `${itemCount} ${plural}`,
+        media: image || null
       };
     }
   },

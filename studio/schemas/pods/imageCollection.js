@@ -11,10 +11,11 @@ export default {
       image: 'items.0.image'
     },
     prepare(selection) {
-      const { title, itemCount, image } = selection;
+      let { title, itemCount, image } = selection;
       const plural = itemCount > 1 ? 's' : '';
       // const previewImg = items && items.length > 0 ? items[0] : null;
-      console.log(image);
+      image = image && image.image ? image.image : image || null;
+
       return {
         title: title || 'Untitled Image Collection',
         subtitle: `${itemCount} item${plural}`,
@@ -41,7 +42,7 @@ export default {
       of: [
         {
           type: 'simpleImageObject',
-          title: 'Create an Image Pod unique to this collection.'
+          title: 'Add an image to this collection.'
         },
         {
           type: 'reference',

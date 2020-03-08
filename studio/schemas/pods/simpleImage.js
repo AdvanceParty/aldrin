@@ -1,7 +1,10 @@
+import { IoIosImage } from 'react-icons/io';
+
 export default {
   name: 'simpleImage',
   title: 'Image Pod',
   type: 'document',
+  icon: IoIosImage,
   preview: {
     select: {
       title: 'image.title',
@@ -13,7 +16,7 @@ export default {
       return {
         title: title || 'Untitled Masterpiece',
         subtitle: alt || '',
-        media: image
+        media: image || IoIosImage
       };
     }
   },

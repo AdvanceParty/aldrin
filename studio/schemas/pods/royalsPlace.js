@@ -1,12 +1,26 @@
+import { FaMapMarkerAlt } from 'react-icons/fa';
+
 export default {
   name: 'royalsPlace',
   title: 'Royals Place',
   description: 'Most likely one of our offices',
+  icon: FaMapMarkerAlt,
   type: 'document',
   preview: {
     select: {
       title: 'title',
-      subtitle: 'addresss.region'
+      region: 'address.region',
+      state: 'address.australianState',
+      image: 'image'
+    },
+    prepare(selection) {
+      console.log(selection);
+      const { title, region, state, image } = selection;
+      return {
+        title,
+        subtitle: `${region}, ${state.toUpperCase()}`,
+        media: image || FaMapMarkerAlt
+      };
     }
   },
   fields: [

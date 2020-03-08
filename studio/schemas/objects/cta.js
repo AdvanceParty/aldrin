@@ -1,6 +1,9 @@
+import { MdNotifications } from 'react-icons';
+
 export default {
   name: 'cta',
   title: 'Call To Action',
+  icon: MdNotifications,
   type: 'object',
   fields: [
     {

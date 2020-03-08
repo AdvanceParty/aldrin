@@ -1,5 +1,8 @@
+import { IoIosImages } from 'react-icons/io';
+
 export default {
   name: 'imageCollection',
+  icon: IoIosImages,
   title: 'Collection: Images',
   description:
     'A collection of related images. May be displayed in a variety of different ways on the website. If you want more of a slideshow vibe, you should check out the Carousel pod.',
@@ -7,19 +10,16 @@ export default {
   preview: {
     select: {
       title: 'title',
-      itemCount: 'items.length',
-      image: 'items.0.image'
+      itemCount: 'items.length'
     },
     prepare(selection) {
-      let { title, itemCount, image } = selection;
+      let { title, itemCount } = selection;
       const plural = itemCount > 1 ? 's' : '';
-      // const previewImg = items && items.length > 0 ? items[0] : null;
-      image = image && image.image ? image.image : image || null;
 
       return {
         title: title || 'Untitled Image Collection',
         subtitle: `${itemCount} item${plural}`,
-        media: image ? image : null
+        media: IoIosImages
       };
     }
   },

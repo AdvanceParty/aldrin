@@ -6288,7 +6288,7 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
-react-icons@^3.8.0:
+react-icons@^3.8.0, react-icons@^3.9.0:
   version "3.9.0"
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-3.9.0.tgz#89a00f20a0e02e6bfd899977eaf46eb4624239d5"
   dependencies:

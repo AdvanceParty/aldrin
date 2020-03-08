@@ -1,7 +1,10 @@
+import { MdStars } from 'react-icons/md';
+
 export default {
   name: 'hero',
   title: 'Hero',
   type: 'document',
+  icon: MdStars,
   preview: {
     select: {
       title: 'title',
@@ -13,7 +16,7 @@ export default {
       const { title, cta, image } = selection;
       return {
         title: title || alt || cta || 'Untitled Hero Pod',
-        media: image || null
+        media: image || MdStars
       };
     }
   },
@@ -31,7 +34,9 @@ export default {
     {
       name: 'image',
       title: 'Image',
-      type: 'image'
+      description: 'A nice shiny image for your hero block.',
+      type: 'image',
+      options: [{ metadata: ['palette'] }]
     },
     {
       name: 'cta',

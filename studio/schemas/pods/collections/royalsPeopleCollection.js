@@ -1,6 +1,9 @@
+import { MdPeople } from 'react-icons/md';
+
 export default {
-  name: 'royalsPeople',
+  name: 'royalsPeopleCollection',
   title: 'Collection: People',
+  icon: MdPeople,
   description:
     'A group of Royals, all hanging out together. Good for project teams, gangs, assigning blame, etc.',
   type: 'document',
@@ -8,15 +11,15 @@ export default {
     select: {
       title: 'title',
       itemCount: 'items.length',
-      image: 'items.0.profileImage'
+      image: 'icon'
     },
     prepare(selection) {
-      const { title, itemCount, image } = selection;
+      const { title, itemCount = 0, image } = selection;
       const plural = itemCount == 1 ? '(lonely) person' : 'people';
       return {
         title: title || 'Untitled bunch of randos',
         subtitle: `${itemCount} ${plural}`,
-        media: image || null
+        media: image || MdPeople
       };
     }
   },
@@ -30,6 +33,13 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'text'
+    },
+    {
+      name: 'icon',
+      title: 'Icon',
+      description:
+        'A small image to represent this group in the CMS and for preview & content listings on the website.',
+      type: 'image'
     },
     {
       name: 'items',

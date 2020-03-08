@@ -1,6 +1,9 @@
+import { MdTextFields } from 'react-icons/md';
+
 export default {
   name: 'richText',
   title: 'Rich Text',
+  icon: MdTextFields,
   description:
     'A text block which supports multiple paragraphs of normal body text and headings. Supported inline elements: links, lists and bold/emphasis markings.',
   type: 'object',

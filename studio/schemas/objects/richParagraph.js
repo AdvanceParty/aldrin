@@ -1,6 +1,9 @@
+import { MdShortText } from 'react-icons/md';
+
 export default {
   name: 'richParagraph',
   title: 'Rich Paragraph',
+  icon: MdShortText,
   description:
     'A text block which supports multiple paragraphs of normal body text (no headings), inine links, lists and bold/emphasis markings.',
   type: 'object',

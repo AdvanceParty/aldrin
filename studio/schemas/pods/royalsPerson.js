@@ -1,6 +1,9 @@
+import { MdPerson } from 'react-icons/md';
+
 export default {
   name: 'royalsPerson',
   title: 'Royals Person',
+  icon: MdPerson,
   type: 'document',
   preview: {
     select: {
@@ -14,7 +17,7 @@ export default {
       return {
         title: title || 'Captain Mysterious',
         subtitle: `${job || ''}${job && office ? ', ' : ''}${office || ''}`,
-        media: image
+        media: image || MdPerson
       };
     }
   },

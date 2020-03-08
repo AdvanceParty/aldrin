@@ -1,6 +1,9 @@
+import { TiNews } from 'react-icons/ti';
+
 export default {
   name: 'richTextMedia',
   title: 'Rich Text Meddia',
+  icon: TiNews,
   description:
     'Rich text wioth headings, paragraphs, inline styles, lists and a subset of embedded media/object types. Mainly used as the main content container for stories on vine/article/page views.',
   type: 'object',

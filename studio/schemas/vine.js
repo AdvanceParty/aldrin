@@ -1,11 +1,24 @@
+import { IoMdApps } from 'react-icons/io';
+import hero from './pods/hero';
+
 export default {
   name: 'vine',
   title: 'Vine',
   type: 'document',
+  icon: IoMdApps,
   preview: {
     select: {
       title: 'title',
-      subtitle: 'category'
+      subtitle: 'category',
+      image: 'hero.image'
+    },
+    prepare(selection) {
+      const { title, subtitle, image } = selection;
+      return {
+        title,
+        subtitle,
+        media: image || IoMdApps
+      };
     }
   },
   fields: [
@@ -71,12 +84,13 @@ export default {
       of: [
         {
           type: 'reference',
+          title: 'Pod',
           to: [
             { type: 'callout' },
             { type: 'hero' },
             { type: 'imageCollection' },
             { type: 'royalsPerson' },
-            { type: 'royalsPeople' },
+            { type: 'royalsPeopleCollection' },
             { type: 'royalsPlace' },
             { type: 'simpleImage' }
           ]

@@ -10,11 +10,14 @@ import vine from './vine';
 // pods
 import callout from './pods/callout';
 import hero from './pods/hero';
-import imageCollection from './pods/imageCollection';
+import orgUnit from './pods/orgUnit';
 import royalsPerson from './pods/royalsPerson';
-import royalsPeople from './pods/royalsPeople';
 import royalsPlace from './pods/royalsPlace';
 import simpleImage from './pods/simpleImage';
+
+// collections
+import imageCollection from './pods/collections/imageCollection';
+import royalsPeopleCollection from './pods/collections/royalsPeopleCollection';
 
 // objects
 import simpleImageObject from './objects/simpleImageObject';
@@ -39,9 +42,8 @@ export default createSchema({
     vine,
     callout,
     hero,
-    imageCollection,
+    orgUnit,
     royalsPerson,
-    royalsPeople,
     royalsPlace,
     simpleImage,
     address,
@@ -49,6 +51,9 @@ export default createSchema({
     phoneNumber,
     richParagraph,
     richText,
-    richTextMedia
+    richTextMedia,
+
+    imageCollection,
+    royalsPeopleCollection
   ])
 });

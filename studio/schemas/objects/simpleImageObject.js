@@ -24,6 +24,9 @@ export default {
       name: 'image',
       title: 'Image File',
       type: 'image',
+      options: {
+        metadata: ['palette']
+      },
       validation: Rule => Rule.required()
     },
     {

@@ -1,7 +1,34 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// Generate pages at compile time
 
-// You can delete this file if you're not using it
+// const path = require(`path`)
+
+// exports.createPages = async ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   const vineTemplate = path.resolve("./src/templates/vine.js")
+//   const result = await graphql(`
+//     query {
+//       allContentfulVine {
+//         nodes {
+//           slug
+//           id
+//         }
+//       }
+//     }
+//   `)
+
+//   const { allContentfulVine } = result.data
+//   const vines = allContentfulVine.nodes.map(item => ({
+//     ...item,
+//     component: vineTemplate,
+//   }))
+
+//   vines.forEach(page => {
+//     createPage({
+//       path: `/${page.slug}/`,
+//       component: `${page.component}`,
+//       context: {
+//         id: `${page.id}`,
+//       },
+//     })
+//   })
+// }

@@ -2,7 +2,7 @@ import { AiTwotoneNotification } from 'react-icons/ai';
 
 export default {
   name: 'callout',
-  title: 'Callout',
+  title: 'Callout Pod',
   type: 'document',
   icon: AiTwotoneNotification,
   preview: {

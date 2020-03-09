@@ -1,0 +1,78 @@
+@import "reset";
+@import "palettes";
+@import "typography";
+@import "baseLayout";
+// @import "hero";
+// @import "bio";
+
+body {
+  background: var(--col-body-bg);
+  min-height: 100vh;
+
+  --box-pad-top: 1em;
+  --box-pad-bottom: 1em;
+  --box-pad-left: 1em;
+  --box-pad-right: 1em;
+  --box-pad-all: var(--box-pad-top) var(--box-pad-right) var(--box-pad-bottom)
+    var(--box-pad-left);
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+#sitenav {
+  padding: var(--box-pad-all);
+  background-color: var(--col-bg-dark);
+  color: var(--col-bodytext-invert);
+
+  font-family: "Nunito", sans-serif;
+
+  font-size: 0.8em;
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    color: #333;
+    padding-right: 10px;
+
+    &:last-child {
+      padding-right: none;
+    }
+
+    a {
+      display: inline-block;
+      // padding: 0.3em 0;
+      text-decoration: none;
+      color: var(--col-bodytext-invert);
+
+      &:hover {
+        background-color: var(--col-tint);
+      }
+
+      transition: all 800ms;
+
+      &::after,
+      &::before {
+        padding: 0 3px;
+      }
+
+      &::after {
+        content: "⁍";
+      }
+
+      &::before {
+        content: "⁌";
+      }
+    }
+  }
+}

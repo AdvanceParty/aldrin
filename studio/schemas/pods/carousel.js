@@ -2,7 +2,7 @@ import { MdViewCarousel, MdViewColumn } from 'react-icons/md';
 
 export default {
   name: 'carousel',
-  title: 'Carousel',
+  title: 'Carousel Pod',
   description:
     'A collection of items displayed one at a time. Each item can have its own title, description, call to action and image.',
   icon: MdViewCarousel,

@@ -1,0 +1,25 @@
+html {
+  --col-bg-light: #fff;
+  --col-bg-dark: #0fabbc;
+
+  --col-bodytext: rgba(30, 30, 30, 0.8);
+  --col-bodytext-invert: #e4f9ff;
+
+  --col-herotext: #fff;
+  --col-heading: var(--col-bodytext);
+  --col-subheading: var(--col-bodytext);
+
+  --col-accent: #fa163f;
+  --col-tint: #12cad6;
+
+  --gradient-hero-overlay: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.4) 75%,
+    rgba(0, 0, 0, 0.5) 85%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+
+  --shadow-hero-text: 0.03em 0.03em 0.15em rgba(0, 0, 0, 0.75);
+}

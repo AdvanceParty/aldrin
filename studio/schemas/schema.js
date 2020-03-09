@@ -1,60 +1,22 @@
-// First, we must import the schema creator
+// Import the schema creator
+// and schema types from any plugins that might expose them
 import createSchema from 'part:@sanity/base/schema-creator';
-
-// Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// major containers
-import vine from './vine';
+// Import all of the schema definition files
+// Note:
+//  each imported file is an index.js file which returns
+//  an array of schema documents. This makes it easier to
+//  keep this main file updated and manage imports etc.
+import vines from './vines';
+import pods from './pods';
+import objects from './objects';
 
-// pods
-import callout from './pods/callout';
-import hero from './pods/hero';
-import orgUnit from './pods/orgUnit';
-import royalsPerson from './pods/royalsPerson';
-import royalsPlace from './pods/royalsPlace';
-import imagePod from './pods/imagePod';
-import carousel from './pods/carousel';
+// Spread the inported schema definition files into a single array
+const allSchemas = [...vines, ...objects, ...pods];
 
-// collections
-import imageCollection from './pods/collections/imageCollection';
-import royalsPeopleCollection from './pods/collections/royalsPeopleCollection';
-
-// objects
-import simpleImageObject from './objects/simpleImageObject';
-//
-import address from './objects/address';
-import cta from './objects/cta';
-import phoneNumber from './objects/phoneNumber';
-import richParagraph from './objects/richParagraph';
-import richText from './objects/richText';
-import richTextMedia from './objects/richTextMedia';
-
-// Then we give our schema to the builder and provide the result to Sanity
+// Export a default schema object for Sanity studio to grab onto
 export default createSchema({
-  // We name our schema
   name: 'default',
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
-  types: schemaTypes.concat([
-    //
-    simpleImageObject,
-    //
-    vine,
-    callout,
-    hero,
-    orgUnit,
-    royalsPerson,
-    royalsPlace,
-    imagePod,
-    address,
-    cta,
-    phoneNumber,
-    richParagraph,
-    richText,
-    richTextMedia,
-    carousel,
-    imageCollection,
-    royalsPeopleCollection
-  ])
+  types: schemaTypes.concat(allSchemas)
 });

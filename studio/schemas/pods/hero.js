@@ -2,7 +2,7 @@ import { MdStars } from 'react-icons/md';
 
 export default {
   name: 'hero',
-  title: 'Hero',
+  title: 'Hero Pod',
   type: 'document',
   icon: MdStars,
   preview: {

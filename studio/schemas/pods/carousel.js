@@ -46,11 +46,10 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'item',
+          type: 'hero',
           title: 'Carousel Item',
           icon: MdViewColumn,
-          description: 'The image, text and CTA for this item.',
-          type: 'hero'
+          description: 'The image, text and CTA for this item.'
         }
       ]
     }

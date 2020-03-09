@@ -1,4 +1,5 @@
 import { TiNews } from 'react-icons/ti';
+import { GiLinkedRings } from 'react-icons/gi';
 
 export default {
   name: 'richTextMedia',
@@ -29,11 +30,10 @@ export default {
             ]
           }
         },
-        // { type: 'simpleImage' },
-        // { type: 'callout' },
-        // { type: 'hero' },
         {
           type: 'reference',
+          title: 'Inline Pods',
+          icon: GiLinkedRings,
           to: [{ type: 'simpleImage' }, { type: 'callout' }, { type: 'hero' }]
         }
       ]

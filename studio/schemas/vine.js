@@ -29,6 +29,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string'
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
@@ -61,11 +66,6 @@ export default {
         source: doc => `${doc.category}-${doc.title}`
       },
       validation: Rule => Rule.required()
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'string'
     },
     {
       name: 'hero',

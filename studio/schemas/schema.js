@@ -14,6 +14,7 @@ import orgUnit from './pods/orgUnit';
 import royalsPerson from './pods/royalsPerson';
 import royalsPlace from './pods/royalsPlace';
 import simpleImage from './pods/simpleImage';
+import carousel from './pods/carousel';
 
 // collections
 import imageCollection from './pods/collections/imageCollection';
@@ -52,7 +53,7 @@ export default createSchema({
     richParagraph,
     richText,
     richTextMedia,
-
+    carousel,
     imageCollection,
     royalsPeopleCollection
   ])

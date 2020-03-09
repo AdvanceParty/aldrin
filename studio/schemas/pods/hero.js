@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'description',
-      title: 'Text',
+      title: 'Body Text',
       type: 'text'
     },
     {
@@ -41,6 +41,8 @@ export default {
     {
       name: 'cta',
       title: 'Call To Action',
+      description:
+        'If you enter a URL and no label, the entire Hero panel will be clickable. Add CTA text for a button instead.',
       type: 'cta'
     }
   ]

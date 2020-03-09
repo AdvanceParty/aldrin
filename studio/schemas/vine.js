@@ -92,7 +92,7 @@ export default {
             { type: 'royalsPerson' },
             { type: 'royalsPeopleCollection' },
             { type: 'royalsPlace' },
-            { type: 'simpleImage' }
+            { type: 'imagePod' }
           ]
         }
       ]

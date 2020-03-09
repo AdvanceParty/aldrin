@@ -13,7 +13,7 @@ import hero from './pods/hero';
 import orgUnit from './pods/orgUnit';
 import royalsPerson from './pods/royalsPerson';
 import royalsPlace from './pods/royalsPlace';
-import simpleImage from './pods/simpleImage';
+import imagePod from './pods/imagePod';
 import carousel from './pods/carousel';
 
 // collections
@@ -46,7 +46,7 @@ export default createSchema({
     orgUnit,
     royalsPerson,
     royalsPlace,
-    simpleImage,
+    imagePod,
     address,
     cta,
     phoneNumber,

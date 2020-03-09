@@ -1,8 +1,6 @@
 export default {
   name: 'simpleImageObject',
   title: 'Image',
-  description:
-    'An image, with data slots for title, caption and alternate text.',
   type: 'object',
   preview: {
     select: {

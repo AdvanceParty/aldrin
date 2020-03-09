@@ -46,8 +46,8 @@ export default {
         },
         {
           type: 'reference',
-          title: 'Link to an existing Image Pod',
-          to: [{ type: 'simpleImage' }]
+          title: 'Add a pre-existing Image Pod',
+          to: [{ type: 'imagePod' }]
         }
       ]
     }

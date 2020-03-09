@@ -1,15 +1,15 @@
 import { IoIosImage } from 'react-icons/io';
 
 export default {
-  name: 'simpleImage',
+  name: 'imagePod',
   title: 'Image Pod',
   type: 'document',
   icon: IoIosImage,
   preview: {
     select: {
-      title: 'image.title',
-      alt: 'image.alt',
-      image: 'image.image'
+      title: 'data.title',
+      alt: 'data.alt',
+      image: 'data.image'
     },
     prepare(selection) {
       const { title, alt, image } = selection;
@@ -22,8 +22,8 @@ export default {
   },
   fields: [
     {
-      name: 'image',
-      title: 'Image',
+      name: 'data',
+      title: 'Image Details',
       type: 'simpleImageObject',
       validation: Rule => Rule.required()
     }

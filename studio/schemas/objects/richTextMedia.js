@@ -34,7 +34,7 @@ export default {
           type: 'reference',
           title: 'Inline Pods',
           icon: GiLinkedRings,
-          to: [{ type: 'simpleImage' }, { type: 'callout' }, { type: 'hero' }]
+          to: [{ type: 'imagePod' }, { type: 'callout' }, { type: 'hero' }]
         }
       ]
     }

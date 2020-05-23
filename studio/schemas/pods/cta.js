@@ -27,25 +27,14 @@ export default {
     },
     {
       name: 'type',
-      title: 'Action Type',
-      type: 'string',
-      validation: Rule => Rule.required(),
-      description:
-        'Choose link for standard URLs. If you need a custom action, have a chat with your friendly dev.',
-      options: {
-        list: [
-          { title: 'Link', value: 'link' },
-          { title: 'Custom Action', value: 'event' }
-        ],
-        layout: 'radio',
-        direction: 'horizontal'
-      }
+      title: 'Custom Event',
+      type: 'boolean',
+      description: `Switch this on to fire a custom event instead of a URL. 99.9% of the time you can leave it off. If in doubt, have a chat with your friendly dev.`
     },
     {
       name: 'target',
       title: 'Click Target / Link',
-      type: 'string',
-      validation: Rule => Rule.required()
+      type: 'string'
     },
     {
       name: 'gtmEventName',

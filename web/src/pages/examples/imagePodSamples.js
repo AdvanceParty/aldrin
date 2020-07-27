@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import useAllImagePodQuery from "../../hooks/useAllImagePodQuery"
-import ImagePod from "../../facades/ImagePod"
+import ImagePod from "../../facades/ImagePodData"
 import ImageCaptioned from "../../components/ImageCaptioned"
 import ImageThumbnail from "../../components/ImageThumbnail"
 

@@ -13,8 +13,8 @@ export const ImageFluid = graphql`
 export const ImageThumbnail = graphql`
   fragment ImageThumbnail on SanityImageAsset {
     id
-    fixed(width: 200, height: 200) {
-      ...GatsbySanityImageFixed
+    thumbnail: fluid(maxHeight: 100, maxWidth: 100) {
+      ...GatsbySanityImageFluid
     }
   }
 `

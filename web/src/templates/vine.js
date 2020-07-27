@@ -1,33 +1,34 @@
 import React from "react"
-// import RichText from "../components/RichText"
-// import Layout from "../components/layout"
+import { graphql } from "gatsby"
+import RichText from "../components/RichText"
+import Layout from "../components/layout"
 
-// export default ({ data }) => {
-//   const { title, subtitle } = data.contentfulVine
-//   return (
-//     <Layout>
-//       <h1>{title}</h1>
-//       <h5>{subtitle}</h5>
-//     </Layout>
-//   )
-// }
+export default ({ data }) => {
+  const { title, subtitle } = data.sanityVine
+  return (
+    <Layout>
+      <h1>{title}</h1>
+      <h5>{subtitle}</h5>
+    </Layout>
+  )
+}
 
-// export const query = graphql`
-//   query VineQuery($id: String) {
-//     contentfulVine(id: { eq: $id }) {
-//       id
-//       title
-//       author {
-//         title
-//         profileImage {
-//           asset {
-//             fluid {
-//               srcSet
-//             }
-//           }
-//         }
-//       }
-//       category
-//     }
-//   }
-// `
+export const query = graphql`
+  query VineQuery($id: String) {
+    sanityVine(id: { eq: $id }) {
+      id
+      title
+      author {
+        title
+        profileImage {
+          asset {
+            fluid {
+              srcSet
+            }
+          }
+        }
+      }
+      category
+    }
+  }
+`

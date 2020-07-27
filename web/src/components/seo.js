@@ -8,22 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import useSiteMetadataQuery from "../hooks/useSiteMetadataQuery"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  const { site } = useSiteMetadataQuery()
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -37,7 +25,7 @@ function SEO({ description, lang, meta, title }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: `metaDescription`,
         },
         {
           property: `og:title`,

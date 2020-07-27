@@ -13,7 +13,7 @@ export default ({ data }) => {
   )
 }
 
-export const query = graphql`
+const query = graphql`
   query VineQuery($id: String) {
     sanityVine(id: { eq: $id }) {
       id

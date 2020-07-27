@@ -1,5 +1,5 @@
 import gtmEvent from './gtmEvent';
-import simpleImageObject from './simpleImageObject';
+import simpleImage from './simpleImage';
 import address from './address';
 import phoneNumber from './phoneNumber';
 import richParagraph from './richParagraph';
@@ -8,7 +8,7 @@ import richTextMedia from './richTextMedia';
 
 export default [
   gtmEvent,
-  simpleImageObject,
+  simpleImage,
   address,
   phoneNumber,
   richParagraph,

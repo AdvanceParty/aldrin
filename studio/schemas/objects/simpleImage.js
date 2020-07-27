@@ -1,21 +1,21 @@
 export default {
-  name: 'simpleImageObject',
+  name: 'simpleImage',
   title: 'Image',
   type: 'object',
   preview: {
     select: {
       title: 'title',
       alt: 'alt',
-      image: 'image'
+      image: 'image',
     },
     prepare(selection) {
       const { title, alt, image } = selection;
       return {
         title: title || 'Untitled Masterpiece',
         subtitle: alt || '',
-        media: image
+        media: image,
       };
-    }
+    },
   },
   fields: [
     {
@@ -23,24 +23,24 @@ export default {
       title: 'Image File',
       type: 'image',
       options: {
-        metadata: ['palette']
+        metadata: ['palette'],
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'alt',
       title: 'Alt text',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Caption',
-      type: 'text'
-    }
-  ]
+      type: 'text',
+    },
+  ],
 };

@@ -7,25 +7,25 @@ export default {
   icon: IoIosImage,
   preview: {
     select: {
-      title: 'data.title',
-      alt: 'data.alt',
-      image: 'data.image'
+      title: 'simpleImage.title',
+      alt: 'simpleImage.alt',
+      image: 'simpleImage.image',
     },
     prepare(selection) {
       const { title, alt, image } = selection;
       return {
         title: title || 'Untitled Masterpiece',
         subtitle: alt || '',
-        media: image || IoIosImage
+        media: image || IoIosImage,
       };
-    }
+    },
   },
   fields: [
     {
-      name: 'data',
+      name: 'simpleImage',
       title: 'Image Details',
-      type: 'simpleImageObject',
-      validation: Rule => Rule.required()
-    }
-  ]
+      type: 'simpleImage',
+      validation: (Rule) => Rule.required(),
+    },
+  ],
 };

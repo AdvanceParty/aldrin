@@ -1,14 +1,17 @@
 import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import useAllImagePodQuery from "../../hooks/useAllImagePodQuery"
-import SimpleImage from "../../facades/SimpleImage"
+
+import useAllHeroPodQuery from "../../hooks/useAllHeroPodQuery"
+
+import ImagePodData from "../../facades/SimpleImage"
 import ImageCaptioned from "../../components/ImageCaptioned"
 import ImageThumbnail from "../../components/ImageThumbnail"
 
 export default () => {
-  const data = useAllImagePodQuery()
-  const { nodes } = data.allSanityImagePod
+  const data = useAllHeroPodQuery()
+  console.log(data.nodes)
+  const { nodes } = data.allSanityHero
   const images = nodes.reduce((list, node) => reduceNode(list, node), {
     pods: [],
     thumbs: [],
@@ -31,11 +34,9 @@ export default () => {
 }
 
 const reduceNode = (list, node) => {
-  console.log(node)
-  const data = new SimpleImage(node.simpleImage)
-  const id = node.id
-  const image = <ImageCaptioned data={data} key={`pod_${id}`} />
-  const thumb = <ImageThumbnail data={data} key={id} />
+  const data = new ImagePodData(node)
+  const image = <ImageCaptioned data={data} key={`pod_${data.id}`} />
+  const thumb = <ImageThumbnail data={data} key={data.id} />
 
   return {
     pods: [...list.pods, image],

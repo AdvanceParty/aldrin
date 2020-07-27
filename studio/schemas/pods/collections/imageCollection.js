@@ -10,7 +10,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      itemCount: 'items.length'
+      itemCount: 'items.length',
     },
     prepare(selection) {
       let { title, itemCount } = selection;
@@ -19,37 +19,37 @@ export default {
       return {
         title: title || 'Untitled Image Collection',
         subtitle: `${itemCount} item${plural}`,
-        media: IoIosImages
+        media: IoIosImages,
       };
-    }
+    },
   },
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'items',
       title: 'Images',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
       type: 'array',
       of: [
         {
-          type: 'simpleImageObject',
-          title: 'Add an image to this collection.'
+          type: 'simpleImage',
+          title: 'Add an image to this collection.',
         },
         {
           type: 'reference',
           title: 'Add a pre-existing Image Pod',
-          to: [{ type: 'imagePod' }]
-        }
-      ]
-    }
-  ]
+          to: [{ type: 'imagePod' }],
+        },
+      ],
+    },
+  ],
 };

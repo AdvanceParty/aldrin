@@ -1,10 +1,10 @@
 import React from "react"
-import Img from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+// import Img from "gatsby-image"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 export default ({ data }) => {
-  const { nodes } = data.allSanityImagePod
+  // const { nodes } = data.allSanityImagePod
 
   // return (
   //   <section key={id} className='hero'>
@@ -13,7 +13,7 @@ export default ({ data }) => {
   // )
   return (
     <Layout>
-      <SEO title="Image Pod Examples" />
+      <SEO title="CTA Pod Examples" />
     </Layout>
   )
 }

@@ -10,40 +10,32 @@ export default {
       title: 'title',
       description: 'description',
       image: 'image',
-      cta: 'cta.title'
     },
     prepare(selection) {
-      const { title, cta, image } = selection;
+      const { title, image } = selection;
       return {
-        title: title || alt || cta || 'Untitled Hero Pod',
-        media: image || MdStars
+        title: title || 'Untitled Hero Pod',
+        media: image || MdStars,
       };
-    }
+    },
   },
   fields: [
     {
       name: 'title',
       title: 'Headline',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Body Text',
-      type: 'text'
+      type: 'text',
     },
     {
       name: 'image',
       title: 'Image',
       description: 'A nice shiny image for your hero block.',
       type: 'image',
-      options: [{ metadata: ['palette'] }]
+      options: [{ metadata: ['palette'] }],
     },
-    {
-      name: 'cta',
-      title: 'Call To Action',
-      description:
-        'If you enter a URL and no label, the entire Hero panel will be clickable. Add CTA text for a button instead.',
-      type: 'cta'
-    }
-  ]
+  ],
 };

@@ -7,7 +7,7 @@
 //   const vineTemplate = path.resolve("./src/templates/vine.js")
 //   const result = await graphql(`
 //     query {
-//       allContentfulVine {
+//       allSanityVine {
 //         nodes {
 //           slug
 //           id
@@ -16,8 +16,8 @@
 //     }
 //   `)
 
-//   const { allContentfulVine } = result.data
-//   const vines = allContentfulVine.nodes.map(item => ({
+//   const { allSanityVine } = result.data
+//   const vines = allSanityVine.nodes.map(item => ({
 //     ...item,
 //     component: vineTemplate,
 //   }))

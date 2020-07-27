@@ -1,6 +1,6 @@
 import QueryResultFacade from "./QueryResultFacade"
 
-class ImagePod extends QueryResultFacade {
+class ImagePodData extends QueryResultFacade {
   constructor(queryResult = {}) {
     super(queryResult)
   }
@@ -28,8 +28,8 @@ class ImagePod extends QueryResultFacade {
   }
 
   clone() {
-    return new ImagePod(this._queryResult)
+    return new ImagePodData(this._queryResult)
   }
 }
 
-export default ImagePod
+export default ImagePodData

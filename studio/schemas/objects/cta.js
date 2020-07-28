@@ -4,30 +4,20 @@ export default {
   name: 'cta',
   title: 'Call To Action',
   icon: MdNotifications,
-  type: 'document',
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'target',
-    },
-    prepare(selection) {
-      const { title, subtitle } = selection;
-      return {
-        title: title || 'Untitled CTA',
-        subtitle: subtitle || '',
-        media: MdNotifications,
-      };
-    },
-  },
+  description: 'Target, label, event type and tracking for a call to action.',
+  type: 'object',
+
   fields: [
     {
       name: 'label',
       title: 'Label',
+      validation: (Rule) => Rule.required(),
       type: 'string',
     },
     {
       name: 'target',
       title: 'Click Target / Link',
+      validation: (Rule) => Rule.required(),
       type: 'string',
     },
     {

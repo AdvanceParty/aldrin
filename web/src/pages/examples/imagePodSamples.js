@@ -31,7 +31,6 @@ export default () => {
 }
 
 const reduceNode = (list, node) => {
-  console.log(node)
   const data = new SimpleImage(node.simpleImage)
   const id = node.id
   const image = <ImageCaptioned data={data} key={`pod_${id}`} />

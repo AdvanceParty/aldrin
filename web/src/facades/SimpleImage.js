@@ -20,10 +20,7 @@ class SimpleImage extends QueryResultFacade {
     return this.description
   }
 
-  get id() {
-    return this._queryResult.image.asset.id
-  }
-  get fluid() {
+  get image() {
     return this._queryResult.image.asset.fluid
   }
   get thumbnail() {

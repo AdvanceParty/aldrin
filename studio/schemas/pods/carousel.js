@@ -9,15 +9,15 @@ export default {
   type: 'document',
   preview: {
     select: {
-      title: 'title'
+      title: 'title',
     },
     prepare(selection) {
       const { title } = selection;
       return {
         title,
-        media: MdViewCarousel
+        media: MdViewCarousel,
       };
-    }
+    },
   },
   fields: [
     {
@@ -25,33 +25,34 @@ export default {
       title: 'Carousel Title',
       description: 'For editorial reference. Not displayed on website.',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Carousel Description',
       description: 'For editorial reference. Not displayed on website.',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'shuffleItems',
       title: 'Shuffle items',
       description:
         'Enable this option to show items in random order each time a user views this carousel',
-      type: 'boolean'
+      type: 'boolean',
     },
     {
       name: 'items',
       title: 'Carousel Items',
+      validation: (Rule) => Rule.required().min(1),
       type: 'array',
       of: [
         {
-          type: 'hero',
-          title: 'Carousel Item',
+          type: 'imageWithCta',
+          title: 'Items',
           icon: MdViewColumn,
-          description: 'The image, text and CTA for this item.'
-        }
-      ]
-    }
-  ]
+          description: 'A list of items for your carousel.',
+        },
+      ],
+    },
+  ],
 };

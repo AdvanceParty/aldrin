@@ -1,4 +1,5 @@
 import { AiTwotoneNotification } from 'react-icons/ai';
+import { MdShortText } from 'react-icons/md';
 
 export default {
   name: 'callout',
@@ -7,26 +8,43 @@ export default {
   icon: AiTwotoneNotification,
   preview: {
     select: {
-      textNodes: 'text.bodyText.0.children'
+      textNodes: 'text.bodyText.0.children',
     },
     prepare(selection) {
       const { textNodes } = selection;
       let title = '';
       if (textNodes) {
-        textNodes.forEach(node => (title += node.text));
+        textNodes.forEach((node) => (title += node.text));
         title = title.length > 25 ? title.substring(0, 22) + '...' : title;
       }
       return {
         title: title || 'Untitled callout',
-        media: AiTwotoneNotification
+        media: AiTwotoneNotification,
       };
-    }
+    },
   },
   fields: [
     {
-      name: 'text',
+      name: 'bodyText',
       title: 'Content',
-      type: 'richParagraph'
-    }
-  ]
+      icon: MdShortText,
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          styles: [
+            { title: 'Normal', value: 'normal' },
+            { title: 'Heading 1', value: 'h1' },
+            { title: 'Heading 2', value: 'h2' },
+          ],
+          marks: {
+            decorators: [
+              { title: 'Bold', value: 'strong' },
+              { title: 'Emphasis', value: 'em' },
+            ],
+          },
+        },
+      ],
+    },
+  ],
 };

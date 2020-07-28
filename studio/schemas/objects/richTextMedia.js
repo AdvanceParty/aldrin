@@ -7,36 +7,29 @@ export default {
   icon: TiNews,
   description:
     'Rich text wioth headings, paragraphs, inline styles, lists and a subset of embedded media/object types. Mainly used as the main content container for stories on vine/article/page views.',
-  type: 'object',
-  fields: [
+  type: 'array',
+  of: [
     {
-      name: 'bodyText',
-      title: 'Text and Inline Content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'Heading 1', value: 'h1' },
-            { title: 'Heading 2', value: 'h2' },
-            { title: 'Heading 3', value: 'h3' },
-            { title: 'Blockquote', value: 'blockquote' },
-          ],
-          marks: {
-            decorators: [
-              { title: 'Bold', value: 'strong' },
-              { title: 'Emphasis', value: 'emphasis' },
-            ],
-          },
-        },
-        {
-          type: 'reference',
-          title: 'Inline Content',
-          icon: GiLinkedRings,
-          to: [{ type: 'annotatedImage' }, { type: 'callout' }, { type: 'hero' }],
-        },
+      type: 'block',
+      styles: [
+        { title: 'Normal', value: 'normal' },
+        { title: 'Heading 1', value: 'h1' },
+        { title: 'Heading 2', value: 'h2' },
+        { title: 'Heading 3', value: 'h3' },
+        { title: 'Blockquote', value: 'blockquote' },
       ],
+      marks: {
+        decorators: [
+          { title: 'Bold', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+        ],
+      },
+    },
+    {
+      type: 'reference',
+      title: 'Inline Content',
+      icon: GiLinkedRings,
+      to: [{ type: 'annotatedImage' }, { type: 'callout' }, { type: 'hero' }],
     },
   ],
 };

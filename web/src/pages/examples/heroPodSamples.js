@@ -4,7 +4,7 @@ import SEO from "../../components/seo"
 
 import useAllHeroPodQuery from "../../hooks/useAllHeroPodQuery"
 
-import ImagePodData from "../../facades/SimpleImage"
+import AnnotatedImage from "../../facades/AnnotatedImage"
 import ImageCaptioned from "../../components/ImageCaptioned"
 import ImageThumbnail from "../../components/ImageThumbnail"
 
@@ -34,7 +34,7 @@ export default () => {
 }
 
 const reduceNode = (list, node) => {
-  const data = new ImagePodData(node)
+  const data = new AnnotatedImage(node)
   const image = <ImageCaptioned data={data} key={`pod_${data.id}`} />
   const thumb = <ImageThumbnail data={data} key={data.id} />
 

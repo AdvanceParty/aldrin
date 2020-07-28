@@ -1,9 +1,9 @@
 // import React from "react"
 import { graphql } from "gatsby"
 
-export const SimpleImage = graphql`
-  fragment SimpleImage on SanityImagePod {
-    simpleImage {
+export const AnnotatedImage = graphql`
+  fragment AnnotatedImage on SanityImagePod {
+    annotatedImage {
       alt
       title
       description

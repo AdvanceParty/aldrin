@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import useAllImagePodQuery from "../../hooks/useAllImagePodQuery"
-import SimpleImage from "../../facades/SimpleImage"
+import AnnotatedImage from "../../facades/AnnotatedImage"
 import ImageCaptioned from "../../components/ImageCaptioned"
 import ImageThumbnail from "../../components/ImageThumbnail"
 
@@ -31,7 +31,7 @@ export default () => {
 }
 
 const reduceNode = (list, node) => {
-  const data = new SimpleImage(node.simpleImage)
+  const data = new AnnotatedImage(node.annotatedImage)
   const id = node.id
   const image = <ImageCaptioned data={data} key={`pod_${id}`} />
   const thumb = <ImageThumbnail data={data} key={id} />

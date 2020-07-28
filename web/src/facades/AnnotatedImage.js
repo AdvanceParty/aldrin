@@ -1,8 +1,8 @@
 import QueryResultFacade from "./QueryResultFacade"
 
-class SimpleImage extends QueryResultFacade {
-  constructor(simpleImageNode = {}) {
-    super(simpleImageNode)
+class AnnotatedImage extends QueryResultFacade {
+  constructor(AnnotatedImageNode = {}) {
+    super(AnnotatedImageNode)
   }
 
   get alt() {
@@ -28,8 +28,8 @@ class SimpleImage extends QueryResultFacade {
   }
 
   clone() {
-    return new SimpleImage(this._queryResult)
+    return new AnnotatedImage(this._queryResult)
   }
 }
 
-export default SimpleImage
+export default AnnotatedImage

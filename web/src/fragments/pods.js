@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 export const ImagePod = graphql`
   fragment ImagePod on SanityImagePod {
     id
-    ...SimpleImage
+    ...AnnotatedImage
   }
 `
 

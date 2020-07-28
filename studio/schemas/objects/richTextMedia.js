@@ -21,22 +21,22 @@ export default {
             { title: 'Heading 1', value: 'h1' },
             { title: 'Heading 2', value: 'h2' },
             { title: 'Heading 3', value: 'h3' },
-            { title: 'Blockquote', value: 'blockquote' }
+            { title: 'Blockquote', value: 'blockquote' },
           ],
           marks: {
             decorators: [
               { title: 'Bold', value: 'strong' },
-              { title: 'Emphasis', value: 'emphasis' }
-            ]
-          }
+              { title: 'Emphasis', value: 'emphasis' },
+            ],
+          },
         },
         {
           type: 'reference',
-          title: 'Inline Pods',
+          title: 'Inline Content',
           icon: GiLinkedRings,
-          to: [{ type: 'imagePod' }, { type: 'callout' }, { type: 'hero' }]
-        }
-      ]
-    }
-  ]
+          to: [{ type: 'annotatedImage' }, { type: 'callout' }, { type: 'hero' }],
+        },
+      ],
+    },
+  ],
 };

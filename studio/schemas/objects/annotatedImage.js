@@ -1,5 +1,5 @@
 export default {
-  name: 'simpleImage',
+  name: 'annotatedImage',
   title: 'Image',
   type: 'object',
   preview: {

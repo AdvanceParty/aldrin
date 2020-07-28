@@ -14,7 +14,7 @@ export default {
     },
     prepare(selection) {
       let { title, itemCount } = selection;
-      const plural = itemCount > 1 ? 's' : '';
+      const plural = itemCount != 1 ? 's' : '';
 
       return {
         title: title || 'Untitled Image Collection',
@@ -41,13 +41,8 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'simpleImage',
+          type: 'annotatedImage',
           title: 'Add an image to this collection.',
-        },
-        {
-          type: 'reference',
-          title: 'Add a pre-existing Image Pod',
-          to: [{ type: 'imagePod' }],
         },
       ],
     },

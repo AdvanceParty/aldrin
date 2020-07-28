@@ -1,6 +1,6 @@
 import cta from './cta';
 import gtmEvent from './gtmEvent';
-import simpleImage from './simpleImage';
+import annotated from './annotatedImage';
 import imageWithCta from './imageWithCta';
 import address from './address';
 import phoneNumber from './phoneNumber';
@@ -11,7 +11,7 @@ import richTextMedia from './richTextMedia';
 export default [
   cta,
   gtmEvent,
-  simpleImage,
+  annotated,
   imageWithCta,
   address,
   phoneNumber,

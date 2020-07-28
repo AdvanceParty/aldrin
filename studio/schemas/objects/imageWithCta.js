@@ -5,7 +5,7 @@ export default {
   title: 'Image with CTA(s)',
   icon: MdNotifications,
   description:
-    'Data structure with a simpleImage and one or more calls to action. Useful for carousel items, hero banners and other content which combines a feauture image with user-triggered actions.',
+    'Data structure for grouping an annotatedImage with up to three calls to action. Useful for carousel items, hero banners and other content which combines a feauture image with user-triggered actions.',
   type: 'object',
   preview: {
     select: {
@@ -16,9 +16,10 @@ export default {
     },
     prepare(selection) {
       const { imgTitle, ctaLabel, ctaCount, image } = selection;
+      const plural = ctaCount != 1 ? 's' : '';
       return {
         title: imgTitle || ctaLabel || 'Image with CTA',
-        subtitle: `${ctaCount || 0} call${ctaCount != 1 ? 's' : ''} to action.`,
+        subtitle: `${ctaCount || 0} call${plural} to action.`,
         media: image,
       };
     },
@@ -29,7 +30,7 @@ export default {
       title: 'Image',
       validation: (Rule) => Rule.required(),
       description: 'Note: Some UI components may not display the image title and caption.',
-      type: 'simpleImage',
+      type: 'annotatedImage',
       title: 'Add an image to this collection.',
     },
     {

@@ -7,9 +7,9 @@ export default {
   icon: IoIosImage,
   preview: {
     select: {
-      title: 'simpleImage.title',
-      alt: 'simpleImage.alt',
-      image: 'simpleImage.image',
+      title: 'annotatedImage.title',
+      alt: 'annotatedImage.alt',
+      image: 'annotatedImage.image',
     },
     prepare(selection) {
       const { title, alt, image } = selection;
@@ -22,9 +22,9 @@ export default {
   },
   fields: [
     {
-      name: 'simpleImage',
+      name: 'annotatedImage',
       title: 'Image Details',
-      type: 'simpleImage',
+      type: 'annotatedImage',
       validation: (Rule) => Rule.required(),
     },
   ],

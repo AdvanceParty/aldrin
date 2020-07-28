@@ -2,9 +2,9 @@ import { MdViewCarousel, MdViewColumn } from 'react-icons/md';
 
 export default {
   name: 'carousel',
-  title: 'Carousel Pod',
+  title: 'Carousel',
   description:
-    'A collection of items displayed one at a time. Each item can have its own title, description, call to action and image.',
+    'A collection of images to be displayed one after the other. Each image can optionally have its own title, description, and call to action.',
   icon: MdViewCarousel,
   type: 'document',
   preview: {
@@ -14,7 +14,7 @@ export default {
     prepare(selection) {
       const { title } = selection;
       return {
-        title,
+        title: title || 'Untitled Carousel',
         media: MdViewCarousel,
       };
     },
@@ -22,15 +22,15 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Carousel Title',
-      description: 'For editorial reference. Not displayed on website.',
+      title: 'Title',
+      description: 'For admin reference only - not displayed on website.',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Carousel Description',
-      description: 'For editorial reference. Not displayed on website.',
+      description: 'For admin reference only - not displayed on website.',
       type: 'string',
     },
     {
@@ -55,4 +55,7 @@ export default {
       ],
     },
   ],
+  initialValue: {
+    shuffleItems: false,
+  },
 };

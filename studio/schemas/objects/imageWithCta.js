@@ -9,10 +9,10 @@ export default {
   type: 'object',
   preview: {
     select: {
-      imgTitle: 'image.0.title',
+      imgTitle: 'image.title',
       ctaLabel: 'cta.0.label',
       ctaCount: 'cta.length',
-      image: 'image.0.image',
+      image: 'image.image',
     },
     prepare(selection) {
       const { imgTitle, ctaLabel, ctaCount, image } = selection;
@@ -27,27 +27,15 @@ export default {
     {
       name: 'image',
       title: 'Image',
-      validation: (Rule) => Rule.required().length(1),
-      description:
-        'The image to be displayed. Note: Some UI components may not display the image title and caption.',
-      type: 'array',
-      of: [
-        {
-          type: 'simpleImage',
-          title: 'Add an image to this collection.',
-        },
-        {
-          type: 'reference',
-          title: 'Add a pre-existing Image Pod',
-          to: [{ type: 'imagePod' }],
-        },
-      ],
+      validation: (Rule) => Rule.required(),
+      description: 'Note: Some UI components may not display the image title and caption.',
+      type: 'simpleImage',
+      title: 'Add an image to this collection.',
     },
     {
       name: 'cta',
       title: 'Calls to action',
-      description:
-        'Up to three calls to action to be presented with the image. Note: the appearance of each call to action will vary depending on which UI component is being used.',
+      description: 'Up to three calls to action to be presented with the image.',
       type: 'array',
       validation: (Rule) => Rule.required().max(3),
       of: [

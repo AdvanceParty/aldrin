@@ -7,24 +7,25 @@ export default {
   icon: IoIosImage,
   preview: {
     select: {
-      title: 'annotatedImage.title',
-      alt: 'annotatedImage.alt',
-      image: 'annotatedImage.image',
+      title: 'title',
+      caption: 'caption',
+      alt: 'imageAsset.alt',
+      image: 'imageAsset.image',
     },
     prepare(selection) {
-      const { title, alt, image } = selection;
+      const { title, caption, alt, image } = selection;
       return {
-        title: title || 'Untitled Masterpiece',
-        subtitle: alt || '',
+        title: title || 'Untitled Image',
+        subtitle: caption || alt || '',
         media: image || IoIosImage,
       };
     },
   },
   fields: [
     {
-      name: 'annotatedImage',
-      title: 'Image Details',
-      type: 'annotatedImage',
+      name: 'imageAsset',
+      title: ' ',
+      type: 'mediaAssetImage',
       validation: (Rule) => Rule.required(),
     },
   ],

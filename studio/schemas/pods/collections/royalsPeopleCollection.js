@@ -11,7 +11,7 @@ export default {
     select: {
       title: 'title',
       itemCount: 'items.length',
-      image: 'icon'
+      image: 'icon',
     },
     prepare(selection) {
       const { title, itemCount = 0, image } = selection;
@@ -19,39 +19,53 @@ export default {
       return {
         title: title || 'Untitled bunch of randos',
         subtitle: `${itemCount} ${plural}`,
-        media: image || MdPeople
+        media: image || MdPeople,
       };
-    }
+    },
   },
+  fieldsets: [
+    {
+      name: 'info',
+      title: 'About this collection',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
       title: 'Title',
-      type: 'string'
+      fieldset: 'info',
+      type: 'string',
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
+      fieldset: 'info',
+      type: 'text',
     },
     {
       name: 'icon',
       title: 'Icon',
+      fieldset: 'info',
       description:
         'A small image to represent this group in the CMS and for preview & content listings on the website.',
-      type: 'image'
+      type: 'image',
     },
     {
       name: 'items',
       title: 'Members',
-      validation: Rule => Rule.required(),
+      description: 'Select one or more people to add into your collection.',
+      validation: (Rule) => Rule.required(),
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: { type: 'royalsPerson' }
-        }
-      ]
-    }
-  ]
+          to: { type: 'royalsPerson' },
+        },
+      ],
+    },
+  ],
 };

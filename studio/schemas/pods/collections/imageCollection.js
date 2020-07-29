@@ -5,7 +5,7 @@ export default {
   icon: IoIosImages,
   title: 'Collection: Images',
   description:
-    'A collection of related images. May be displayed in a variety of different ways on the website. If you want more of a slideshow vibe, you should check out the Carousel pod.',
+    'A collection of related image pods. May be displayed in a variety of different ways on the website.</p><p>If you want more of a slideshow vibe, you should check out the Carousel pod.',
   type: 'document',
   preview: {
     select: {
@@ -48,12 +48,13 @@ export default {
     },
     {
       name: 'items',
-      title: 'Images',
+      title: 'Items',
+      description: 'Select one or more image pods to add into your collection.',
       validation: (Rule) => Rule.required(),
-      type: 'array',
-      of: [
+      type: 'reference',
+      to: [
         {
-          type: 'imageCollectionItem',
+          type: 'imagePod',
         },
       ],
     },

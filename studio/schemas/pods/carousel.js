@@ -47,7 +47,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'imageWithCta',
+          type: 'carouselItem',
           title: 'Items',
           icon: MdViewColumn,
           description: 'A list of items for your carousel.',

@@ -53,8 +53,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: [{ type: 'imagePod' }],
+          type: 'imageCollectionItem',
         },
       ],
     },

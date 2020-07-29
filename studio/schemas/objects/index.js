@@ -7,6 +7,8 @@ import imageWithCta from './imageWithCta';
 import address from './address';
 import phoneNumber from './phoneNumber';
 import richTextMedia from './richTextMedia';
+import imageCollectionItem from './composites/imageCollectionItem';
+import carouselItem from './composites/carouselItem';
 
 export default [
   mediaAssetImage,
@@ -18,4 +20,6 @@ export default [
   address,
   phoneNumber,
   richTextMedia,
+  imageCollectionItem,
+  carouselItem,
 ];

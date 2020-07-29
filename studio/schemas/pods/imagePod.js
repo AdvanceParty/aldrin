@@ -7,10 +7,10 @@ export default {
   icon: IoIosImage,
   preview: {
     select: {
-      title: 'title',
-      caption: 'caption',
-      alt: 'imageAsset.alt',
-      image: 'imageAsset.image',
+      title: 'details.title',
+      caption: 'details.caption',
+      alt: 'details.alt',
+      image: 'image',
     },
     prepare(selection) {
       const { title, caption, alt, image } = selection;
@@ -23,10 +23,18 @@ export default {
   },
   fields: [
     {
-      name: 'imageAsset',
-      title: ' ',
-      type: 'mediaAssetImage',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        metadata: ['palette'],
+      },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'details',
+      title: 'Title, alt text & caption',
+      type: 'mediaAssetDetails',
     },
   ],
 };

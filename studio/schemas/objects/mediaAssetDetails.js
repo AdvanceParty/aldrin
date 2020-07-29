@@ -1,9 +1,10 @@
 export default {
-  name: 'assetDetails',
+  name: 'mediaAssetDetails',
   title: 'Title, caption and alt text',
   type: 'object',
   options: {
     collapsible: true,
+    collapsed: false,
   },
   fields: [
     {
@@ -22,7 +23,7 @@ export default {
     {
       name: 'caption',
       title: 'Caption',
-      type: 'string',
+      type: 'text',
       description: 'A caption or description. Not all UI components will display this content.',
     },
   ],

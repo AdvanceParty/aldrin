@@ -31,7 +31,7 @@ export default {
     {
       name: 'details',
       title: 'Title, alt text & caption',
-      type: 'assetDetails',
+      type: 'mediaAssetDetails',
     },
   ],
 };

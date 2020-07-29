@@ -18,5 +18,5 @@ const allSchemas = [...vines, ...objects, ...pods];
 // Export a default schema object for Sanity studio to grab onto
 export default createSchema({
   name: 'default',
-  types: schemaTypes.concat(allSchemas)
+  types: schemaTypes.concat(allSchemas),
 });

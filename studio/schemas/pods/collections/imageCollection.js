@@ -23,15 +23,27 @@ export default {
       };
     },
   },
+  fieldsets: [
+    {
+      name: 'aboutCollection',
+      title: 'About this collection',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
       title: 'Title',
+      fieldset: 'aboutCollection',
       type: 'string',
     },
     {
       name: 'description',
       title: 'Description',
+      fieldset: 'aboutCollection',
       type: 'text',
     },
     {
@@ -41,8 +53,16 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'annotatedImage',
+          type: 'imagePod',
           title: 'Add an image to this collection.',
+        },
+        {
+          type: 'reference',
+          to: [
+            {
+              type: 'imagePod',
+            },
+          ],
         },
       ],
     },

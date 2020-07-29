@@ -11,7 +11,7 @@ export default {
       title: 'title',
       region: 'address.region',
       state: 'address.australianState',
-      image: 'image'
+      image: 'image',
     },
     prepare(selection) {
       console.log(selection);
@@ -19,16 +19,25 @@ export default {
       return {
         title,
         subtitle: `${region}, ${state.toUpperCase()}`,
-        media: image || FaMapMarkerAlt
+        media: image || FaMapMarkerAlt,
       };
-    }
+    },
   },
+  fieldsets: [
+    {
+      name: 'contact',
+      title: 'Contact',
+      options: {
+        collapsible: true,
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Slug',
@@ -37,39 +46,45 @@ export default {
       description:
         'A unique identifier for this record, used for URL generation and SEO. Usually, you can just click the Generate button and all will be fine.',
       options: {
-        source: doc => `places-${doc.title}`
+        source: (doc) => `places-${doc.title}`,
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'address',
       title: 'Address',
       type: 'address',
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'phone',
-      title: 'Primary Phone Number',
-      type: 'phoneNumber',
-      validation: Rule => Rule.required()
+      title: 'Phone Numbers',
+      fieldset: 'contact',
+      type: 'array',
+      of: [
+        {
+          type: 'phoneNumber',
+        },
+      ],
+      validation: (Rule) => Rule.required().min(1),
     },
     {
       name: 'email',
       title: 'Email Address',
-      type: 'string'
+      fieldset: 'contact',
+      type: 'string',
     },
     {
       name: 'image',
       title: 'Image',
-      description:
-        'The front of the building or a cool interior shot would be nice.',
-      type: 'image'
+      description: 'The front of the building or a cool interior shot would be nice.',
+      type: 'image',
     },
     {
       name: 'geolocation',
       title: 'Goelocation',
       description: 'Used for sticking a pin in a map.',
-      type: 'geopoint'
-    }
-  ]
+      type: 'geopoint',
+    },
+  ],
 };

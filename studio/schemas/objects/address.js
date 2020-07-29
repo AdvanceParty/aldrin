@@ -7,41 +7,44 @@ export default {
       title: 'street',
       australianState: 'australianState',
       internationalState: 'internationalState',
-      region: 'region'
+      region: 'region',
     },
     prepare(selection) {
       const { title, region, australianState, internationalState } = selection;
       return {
         title: title || 'Nowheresville',
-        subtitle: `${region} ${australianState || internationalState}`
+        subtitle: `${region} ${australianState || internationalState}`,
       };
-    }
+    },
+  },
+  options: {
+    collapsible: true,
   },
   fields: [
     {
       name: 'address1',
       title: 'Unit/Apartment/Level',
       description: '',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'street',
       title: 'Street Address',
-      validation: Rule => Rule.required(),
-      type: 'string'
+      validation: (Rule) => Rule.required(),
+      type: 'string',
     },
     {
       name: 'region',
       title: 'Suburb',
       description: '.../town/etc as applicable.',
-      validation: Rule => Rule.required(),
-      type: 'string'
+      validation: (Rule) => Rule.required(),
+      type: 'string',
     },
     {
       name: 'postcode',
       title: 'Postcode',
       description: '',
-      type: 'string'
+      type: 'string',
     },
     {
       name: 'australianState',
@@ -57,10 +60,10 @@ export default {
           { title: 'TAS', value: 'tas' },
           { title: 'VIC', value: 'vic' },
           { title: 'WA', value: 'wa' },
-          { title: 'Other', value: null }
-        ]
+          { title: 'Other', value: null },
+        ],
       },
-      validation: Rule => Rule.required()
-    }
-  ]
+      validation: (Rule) => Rule.required(),
+    },
+  ],
 };

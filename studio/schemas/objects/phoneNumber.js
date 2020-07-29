@@ -1,3 +1,5 @@
+import { MdPhone } from 'react-icons/md';
+
 const areaCodePattern = /^(\(0[\d]{1,}\)|\+\d{1,})$/;
 const phoneNumberPattern = /^\d[\d,\s]{5,}\d$/;
 
@@ -7,38 +9,55 @@ export default {
   type: 'object',
   preview: {
     select: {
+      label: 'label',
       regionCode: 'regionCode',
-      number: 'number'
+      number: 'number',
     },
     prepare(selection) {
-      const { regionCode, number } = selection;
-      title: `${regionCode} ${number}`;
-    }
+      const { label, regionCode, number } = selection;
+      const labelValue = label ? `${label}: ` : '';
+      return {
+        title: `${labelValue} ${regionCode} ${number}`,
+        media: MdPhone,
+      };
+    },
   },
+  fieldsets: [
+    {
+      name: 'ph',
+      title: ' ',
+      options: {
+        columns: 2,
+      },
+    },
+  ],
   fields: [
     {
-      name: 'regionCode',
-      title: 'Country or Area Code',
+      name: 'label',
+      title: 'Label',
       type: 'string',
-      validation: Rule =>
-        Rule.custom(value => {
-          const valid =
-            value !== undefined && Boolean(value.match(areaCodePattern));
-          return valid
-            ? valid
-            : "Must be '+xx' International or (xx) Australian format.";
-        })
+    },
+    {
+      name: 'regionCode',
+      title: 'Country/Area Code',
+      fieldset: 'ph',
+      type: 'string',
+      validation: (Rule) =>
+        Rule.custom((value) => {
+          const valid = value !== undefined && Boolean(value.match(areaCodePattern));
+          return valid ? valid : "Must be '+xx' International or (xx) Australian format.";
+        }),
     },
     {
       name: 'number',
+      fieldset: 'ph',
       title: 'Phone Number',
       type: 'string',
-      validation: Rule =>
-        Rule.custom(value => {
-          const valid =
-            value !== undefined && Boolean(value.match(phoneNumberPattern));
+      validation: (Rule) =>
+        Rule.custom((value) => {
+          const valid = value !== undefined && Boolean(value.match(phoneNumberPattern));
           return valid ? valid : 'Numbers only, please!';
-        })
-    }
-  ]
+        }),
+    },
+  ],
 };

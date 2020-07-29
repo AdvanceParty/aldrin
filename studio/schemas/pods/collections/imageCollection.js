@@ -53,16 +53,8 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'imagePod',
-          title: 'Add an image to this collection.',
-        },
-        {
           type: 'reference',
-          to: [
-            {
-              type: 'imagePod',
-            },
-          ],
+          to: [{ type: 'imagePod' }],
         },
       ],
     },

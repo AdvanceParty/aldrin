@@ -1,1 +1,0 @@
-https://z6746dih.api.sanity.io/v1/graphql/production/default

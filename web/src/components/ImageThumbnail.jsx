@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import Img from "gatsby-image"
 
-const ImageThumbnail = ({ data }) => {
-  const [alt] = useState(data.alt)
-  const [title] = useState(data.title)
-  const [image] = useState(data.thumbnail)
+const ImageThumbnail = ({ props }) => {
+  const [alt] = useState(props.alt)
+  const [title] = useState(props.title)
+  const [image] = useState(props.image)
 
-  return <Img fluid={image} alt={alt} {...title} />
+  return <Img fixed={image} alt={alt} {...title} />
 }
 
 export default ImageThumbnail

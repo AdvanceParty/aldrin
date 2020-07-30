@@ -6,7 +6,14 @@ const useAllImagePodQuery = () => {
       query {
         allSanityImagePod {
           nodes {
-            ...ImagePod
+            id
+            image {
+              ...FluidImage
+            }
+            thumbnail: image {
+              ...ThumbnailImage
+            }
+            ...mediaAssetDetails
           }
         }
       }

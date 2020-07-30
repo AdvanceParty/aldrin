@@ -6,8 +6,23 @@ const useAllRoyalsPersonQuery = () => {
       query {
         allSanityRoyalsPerson {
           nodes {
-            name
-            _rawBodyText
+            slug {
+              current
+            }
+            fullName
+            preferredName
+            job
+            joinedOn(fromNow: true)
+            office {
+              title
+            }
+            profileImage {
+              ...FluidImage
+            }
+            personalImage {
+              ...FluidImage
+            }
+            bio: _rawBodyText
           }
         }
       }

@@ -8,7 +8,7 @@ const Sitenav = () => (
         <Link to="/examples/imagePodSamples">Image Pods</Link>
       </li>
       <li>
-        <Link to="/examples/ctaPodSamples">CTA Pods</Link>
+        <Link to="/examples/personSamples">People</Link>
       </li>
     </ul>
   </nav>

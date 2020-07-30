@@ -51,14 +51,14 @@ export default {
   ],
   fields: [
     {
-      name: 'title',
+      name: 'fullName',
       title: 'Full Name',
       fieldset: 'personal',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'name',
+      name: 'preferredName',
       title: 'Preferred Name',
       type: 'string',
       fieldset: 'personal',

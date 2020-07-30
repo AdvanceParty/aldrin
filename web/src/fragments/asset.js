@@ -1,36 +1,45 @@
 // import React from "react"
 import { graphql } from "gatsby"
 
-export const AnnotatedImage = graphql`
-  fragment AnnotatedImage on SanityImagePod {
-    annotatedImage {
-      alt
-      title
-      description
-      image {
-        asset {
-          ...ImageThumbnail
-          ...ImageFluid
-        }
+export const FluidImage = graphql`
+  fragment FluidImage on SanityImage {
+    asset {
+      fluid {
+        ...GatsbySanityImageFluid
       }
     }
   }
 `
 
-export const ImageFluid = graphql`
-  fragment ImageFluid on SanityImageAsset {
-    id
-    fluid {
-      ...GatsbySanityImageFluid
+export const ThumbnailImage = graphql`
+  fragment ThumbnailImage on SanityImage {
+    asset {
+      fixed(height: 120, width: 120) {
+        ...GatsbySanityImageFixed
+      }
     }
   }
 `
 
-export const ImageThumbnail = graphql`
-  fragment ImageThumbnail on SanityImageAsset {
+/* *********************** */
+
+export const MediaAssetDetails = graphql`
+  fragment mediaAssetDetails on SanityImagePod {
+    details {
+      alt
+      caption
+      title
+    }
+  }
+`
+export const HeroPod = graphql`
+  fragment HeroPod on SanityHero {
     id
-    thumbnail: fluid(maxHeight: 100, maxWidth: 100) {
-      ...GatsbySanityImageFluid
+    title
+    image {
+      asset {
+        ...ImageFluid
+      }
     }
   }
 `

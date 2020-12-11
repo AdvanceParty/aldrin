@@ -3,7 +3,7 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Img from "gatsby-image"
 import useAllRoyalsPersonQuery from "../../hooks/useAllRoyalsPersonQuery"
-import FluidImage from "../../facades/FluidImage"
+import FluidImage from "../../__facades/FluidImage"
 const BlockContent = require("@sanity/block-content-to-react")
 
 export default () => {

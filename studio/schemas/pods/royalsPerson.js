@@ -8,7 +8,7 @@ export default {
   type: 'document',
   preview: {
     select: {
-      title: 'title',
+      title: 'fullName',
       job: 'job',
       office: 'office.title',
       image: 'profileImage',
